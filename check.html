@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- title & favicon -->
+        <title>Check eVISA / eNTRI Authenticity</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <!-- custom css -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/check.css">
+        
+        <!-- bootstap css -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- bootstrap js -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <!-- font awesome -->
+        <script src="https://kit.fontawesome.com/12df173220.js" crossorigin="anonymous"></script>
+        <!-- google captcha -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    </head>
+    <body>
+        <!-- header -->
+        <header class="container">
+            <div class="row d-flex justify-content-between align-items-center">
+                <div class="header-left col-3 col-sm-2 col-md-2 col-lg-1">
+                    <div class="text-center my-3">
+                        <img class="img-fluid" src="img/logo.svg" alt="">
+                    </div>
+                </div>
+        
+                <div class="header-title col-9 col-sm-7 col-md-6 col-lg-7">
+                    <div class="titles">
+                        <h3 class="title mb-0 pb-0">VISEROY IMMIGRATION AGENCY</h3>
+                        <p class="title2 my-0">LOCAL AGECNY FOR VISA, eVISA PROCESSOR</p>
+                    </div>
+                </div>
+        
+                <div class="col-12 col-sm-3 col-md-4 col-lg-4 d-flex justify-content-end">
+                    <div>
+                        <div class="d-flex justify-content-end">
+                            <img class="img-fluid" src="img/textlogo.png" alt="">
+                        </div>
+                        <p class="mb-2 text-end">Malaysia Electronic Visa Facititation & Services.</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <hr class="my-0">
+
+        <section class="check-section-2 container pt-4">
+            <div class="back-and-check d-flex">
+                <p class="d-flex align-items-center">
+                    <a class="go-back" href="index.html">Go Back</a>
+                </p>
+                <p class="d-flex align-items-center checking-2">
+                    <a class="checking-link-2 fw-bold pe-1" href="check.html">Check eVISA / eNTRI Authenticity</a>
+                    <i class="search-icon-2 fa-solid fa-magnifying-glass"></i>
+                </p>
+            </div>
+        
+            <div class="d-flex ms-0 ms-md-2">
+                <p class="lang-eng">English</p>
+                <p class="lang-cn">简体中文</p>
+            </div>
+        </section>
+
+        <!-- check main -->
+        <section class="check-form-main container my-5">
+            <div class="row d-flex justify-content-center">
+                <h5 class="box-title mb-4">VERIFY YOUR eVISA / eNTRI NOW</h5>
+
+                <div class="check-form col-md-12 col-lg-4">
+                    <div class="">
+                        <!-- Passport & Sticker Number Input -->
+                        <div class="input-main">
+                            <input class="input-box" placeholder="Passport Number" type="text" name="" id="passNum" required>
+                            <i class="info fa-sharp fa-solid fa-circle-info"></i>
+                        </div>
+                        <div class="input-main mt-2 mb-1">
+                            <input class="input-box" placeholder="Sticker Number" type="text" name="" id="stickerNum" required>
+                            <i class="info fa-sharp fa-solid fa-circle-info"></i>
+                        </div>
+                
+                        <!-- select type -->
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"
+                                checked>
+                            <label class="form-check-label" for="inlineRadio1">eVISA</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">eNTRI</label>
+                        </div><br>
+                
+                        <!-- captchaBox -->
+                        <div class="form_container mt-1">
+                            <form action="#" id="my_captcha_form">
+                                <div class="g-recaptcha" data-sitekey="6LfrFKQUAAAAAMzFobDZ7ZWy982lDxeps8cd1I2i"></div><br><br>
+                                <p>
+                                    <button type="submit" id="sendNewSms" class="check-btn mb-5" onclick="showData()">Check</button>
+                                </p>
+                            </form>
+                        </div>
+                
+                        <!-- checkBox -->
+                        <div class="checkbox-main">
+                            <input type="checkbox" name="" id="checkme">
+                            <label for="" id="check-box-text">I have obtained my eVISA</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- data show -->
+                <div class="dataBox col-md-12 col-lg-8">
+                    <p class="" id="recordId">Record Found. System will display until last 3 applications only.</p>
+
+                    <div class="d-flex justify-content-center">
+                        <table class="table" id="table-box">
+                            <thead>
+                                <tr>
+                                    <th class="table-text text-center" scope="col">Reference Number</th>
+                                    <th class="table-text text-center" scope="col">Passport Number</th>
+                                    <th class="table-text text-center" scope="col">Application Status</th>
+                                    <th class="table-text text-center" scope="col">Visa Validity</th>
+                                    <th class="table-text text-center" scope="col">Visa Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td class="table-text text-center" id="refNum">0</td>
+                                    <td class="table-text text-center" id="passportNumber">0</td>
+                                    <td class="table-text text-center" id="applicationStatus">0</td>
+                                    <td class="table-text text-center" id="visaValidity">0</td>
+                                    <td class="table-text text-center" id="visaStatus">0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="my-0 bottom-hr">
+
+        <!-- footer -->
+        <footer class="container pt-3 pb-4">
+            <div class="d-flex">
+                <div class="footer-cols">
+                    <h5 class="footer-header">About</h5>
+                    <a class="footer-navs mb-0" href="#">eVISA</a>
+                </div>
+        
+                <div class="footer-cols">
+                    <h5 class="footer-header">T&C</h5>
+                    <a class="footer-navs mb-0" href="#">eVISA General</a><br>
+                    <a class="footer-navs mb-0" href="#">eVISA Medical</a>
+                </div>
+        
+                <div class="footer-cols">
+                    <h5 class="footer-header">FAQ</h5>
+                    <a class="footer-navs mb-0" href="#">eVISA</a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- our js file -->
+        <script src="js/check.js"></script>
+    </body>
+</html>
